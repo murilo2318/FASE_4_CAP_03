@@ -1,0 +1,51 @@
+Projeto de Classificação de Grãos de Trigo com Machine Learning
+ 
+Etapa 1 – Análise e Pré-processamento dos Dados
+Nesta etapa, foi utilizado o conjunto de dados "Seeds", fornecido pela UCI Machine Learning Repository, com informações de 210 amostras de grãos de trigo das variedades Kama, Rosa e Canadian.
+Ações realizadas:
+•	Importação do dataset e nomeação das colunas de acordo com a descrição da UCI.
+•	Visualização das primeiras linhas e verificação da estrutura dos dados.
+•	Cálculo de estatísticas descritivas (média, mediana, desvio padrão).
+•	Verificação de valores ausentes (nenhum valor faltante identificado).
+•	Geração de histogramas, boxplots, matriz de correlação e gráficos de dispersão (pairplot) para análise visual.
+•	Aplicação da técnica de padronização com StandardScaler para normalizar os dados antes da modelagem.
+ 
+Etapa 2 – Modelagem com Algoritmos de Classificação
+Três algoritmos de machine learning supervisionado foram aplicados:
+•	K-Nearest Neighbors (KNN)
+•	Support Vector Machine (SVM)
+•	Random Forest
+Ações realizadas:
+•	Divisão dos dados em treino (70%) e teste (30%) com train_test_split.
+•	Treinamento de cada modelo com o conjunto de treinamento.
+•	Avaliação do desempenho de cada modelo com as métricas:
+o	Acurácia
+o	Matriz de confusão
+o	Precisão, Recall e F1-score
+ 
+Etapa 3 – Otimização dos Modelos com Grid Search
+Foi utilizada a técnica de Grid Search com validação cruzada (GridSearchCV) para encontrar os melhores hiperparâmetros para cada modelo.
+Hiperparâmetros avaliados:
+•	KNN: n_neighbors (3, 5, 7, 9)
+•	SVM: C (0.1, 1, 10), kernel (‘linear’, ‘rbf’)
+•	Random Forest: n_estimators (50, 100, 150), max_depth (None, 5, 10)
+Após a otimização, os modelos foram reavaliados. O Random Forest otimizado foi o modelo com melhor desempenho geral.
+ 
+Etapa 4 – Interpretação e Conclusão
+Interpretação dos Resultados
+•	Random Forest obteve o melhor desempenho geral, com excelente acurácia e equilíbrio entre as métricas de avaliação.
+•	SVM teve desempenho competitivo, especialmente com kernel RBF após ajuste de hiperparâmetros.
+•	KNN apresentou desempenho razoável, mas foi mais sensível à variação dos dados.
+ Principais características influentes:
+•	Sulco do núcleo
+•	Comprimento do núcleo
+•	Coeficiente de assimetria
+Esses atributos foram mais relevantes para separar as classes.
+Conclusão Final
+A aplicação de aprendizado de máquina para classificar grãos de trigo mostrou-se eficaz e promissora. Automatizar esse processo pode reduzir significativamente os erros humanos e melhorar a eficiência das cooperativas agrícolas.
+ 
+Sugestões Futuras
+•	Coleta de dados reais em diferentes condições ambientais.
+•	Exploração de modelos de Deep Learning (como redes neurais).
+•	Desenvolvimento de um sistema de Visão Computacional com imagens reais dos grãos.
+
